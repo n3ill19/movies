@@ -1,0 +1,38 @@
+{% extends './base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="w-4/5 m-auto">
+        <div class="py-12 border-b border-gray-200">
+            <h1 class="text-5xl pt-12 pb-8">
+                Formularz kontaktowy:
+            </h1>
+
+        </div>
+    </div>
+
+</br>
+<div class="w-4/5 bg-gray contact-form m-auto">
+    <div class="form-group">
+{{ form_start(our_form) }}
+    {{ form_row(our_form.fullName, {'attr': {'class': 'form-control'}}) }}
+</br>
+</div>
+<div class="form-group">
+    {{ form_row(our_form.email, {'attr': {'class': 'form-control'}}) }}
+</br>
+</div>
+<div class="form-group">
+    {{ form_row(our_form.message, {'attr': {'class': 'form-control'}}) }}
+
+</div>
+
+<div class="form-group">
+    <input type="submit" value="Send" class="btn btn-primary py-3 px-5">
+</div>
+{{ form_end(our_form) }}
+</div>
+
+</div>
+{% endblock %}

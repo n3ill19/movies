@@ -1,0 +1,1 @@
+alert('Mój pierwszy alert');

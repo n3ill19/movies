@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Symfony 4 Basic BotDetect CAPTCHA Example</title>
+</head>
+
+<body>
+  <h2>Symfony 4 Basic BotDetect CAPTCHA Example</h2>
+
+  {# show message #}
+  {% if message is not empty %}
+    <p>{{ message }}</p>
+  {% endif %}
+
+  {{ form_start(form) }}
+  {{ form_widget(form) }}
+  {{ form_end(form) }}
+</body>
+</html>

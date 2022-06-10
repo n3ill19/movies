@@ -1,0 +1,1 @@
+console.log('Mój pierwszy log.');
