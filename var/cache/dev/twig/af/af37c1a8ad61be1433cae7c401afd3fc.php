@@ -111,7 +111,7 @@ class __TwigTemplate_d39f0c1322e964c4e06e7e73bf420d08 extends Template
                 </h2>
 
                 <span class=\"text-gray-500\">
-                    Od <span class=\"italic text-sm text-gray-800\"> 
+                    Od <span class=\"italic text-sm text-gray-800\"> Admin
         
                 </span>
 
@@ -198,7 +198,7 @@ class __TwigTemplate_d39f0c1322e964c4e06e7e73bf420d08 extends Template
                 </h2>
 
                 <span class=\"text-gray-500\">
-                    Od <span class=\"italic text-sm text-gray-800\"> 
+                    Od <span class=\"italic text-sm text-gray-800\"> Admin
         
                 </span>
 
