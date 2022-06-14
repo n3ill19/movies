@@ -67,7 +67,7 @@ class __TwigTemplate_89f287cfff0dc438b38a05399bbcc816 extends Template
         <div class=\"py-10 text-center\">
             <div class=\"inline-block sm:pt-1\">
                 <h2 class=\"font-bold\">
-                    Stworzył: Patryk Sitek
+                    Stworzył: Admin
                 </h2>
 
                 <p class=\"text-sm text-gray-600\">
@@ -163,7 +163,7 @@ class __TwigTemplate_89f287cfff0dc438b38a05399bbcc816 extends Template
         <div class=\"py-10 text-center\">
             <div class=\"inline-block sm:pt-1\">
                 <h2 class=\"font-bold\">
-                    Stworzył: Patryk Sitek
+                    Stworzył: Admin
                 </h2>
 
                 <p class=\"text-sm text-gray-600\">

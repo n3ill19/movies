@@ -115,7 +115,7 @@ class __TwigTemplate_d39f0c1322e964c4e06e7e73bf420d08 extends Template
         
                 </span>
 
-                <p class=\"text-base text-gray-700 pt-4 pb-10 leading-8 font-light\">
+                <p class=\"text-base text-gray-700 pt-4 pb-10 leading-8 font-light text-overflow:ellipsis white-space:nowrap overflow:hidden\">
                     ";
             // line 45
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "description", [], "any", false, false, false, 45), "html", null, true);
@@ -202,7 +202,7 @@ class __TwigTemplate_d39f0c1322e964c4e06e7e73bf420d08 extends Template
         
                 </span>
 
-                <p class=\"text-base text-gray-700 pt-4 pb-10 leading-8 font-light\">
+                <p class=\"text-base text-gray-700 pt-4 pb-10 leading-8 font-light text-overflow:ellipsis white-space:nowrap overflow:hidden\">
                     {{ movie.description }}
                 </p>
 

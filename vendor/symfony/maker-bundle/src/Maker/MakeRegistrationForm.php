@@ -545,7 +545,7 @@ final class MakeRegistrationForm extends AbstractMaker
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Proszę zaznaczyć zapoznanie się z regulaminem.',
                     ]),
                 ],
 EOF
@@ -559,11 +559,11 @@ EOF
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Proszę wprowadzić hasło',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Twoje hasło nie może być krótsze niż {{ limit }} znaków',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

@@ -671,7 +671,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1653848633,
+1 => 1655230567,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1238,24 +1238,26 @@ return [[
 19 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
-            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\GeneratedValue'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\GeneratedValue')),
+            clone ($p['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
         ],
         null,
         [
             'stdClass' => [
                 'type' => [
-                    'integer',
+                    1 => 'integer',
                 ],
                 'precision' => [
-                    null,
+                    1 => null,
                 ],
                 'scale' => [
-                    null,
+                    1 => null,
                 ],
             ],
         ],
         [
             $o[0],
+            $o[1],
         ],
         []
     );
