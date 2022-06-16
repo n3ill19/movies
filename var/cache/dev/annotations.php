@@ -76,6 +76,8 @@ return [[
 '[C]App%5CController%5CMoviesController%23delete' => 1,
 'App%5CController%5CMoviesController%23show' => 0,
 '[C]App%5CController%5CMoviesController%23show' => 1,
+'App%5CController%5CMoviesController%23checkLoggedInUser' => 0,
+'[C]App%5CController%5CMoviesController%23checkLoggedInUser' => 1,
 'App%5CController%5CMoviesController%24em' => 0,
 '[C]App%5CController%5CMoviesController%24em' => 1,
 'App%5CController%5CMoviesController%24movieRepository' => 0,
@@ -169,6 +171,10 @@ return [[
 '[C]App%5CEntity%5CMovie%23getImagePath' => 1,
 'App%5CEntity%5CMovie%23setImagePath' => 0,
 '[C]App%5CEntity%5CMovie%23setImagePath' => 1,
+'App%5CEntity%5CMovie%23getDateCreate' => 0,
+'[C]App%5CEntity%5CMovie%23getDateCreate' => 1,
+'App%5CEntity%5CMovie%23setDateCreate' => 0,
+'[C]App%5CEntity%5CMovie%23setDateCreate' => 1,
 'App%5CEntity%5CMovie%23getActors' => 0,
 '[C]App%5CEntity%5CMovie%23getActors' => 1,
 'App%5CEntity%5CMovie%23addActor' => 0,
@@ -193,6 +199,8 @@ return [[
 '[C]App%5CEntity%5CMovie%24actors' => 1,
 'App%5CEntity%5CMovie%24userId' => 19,
 '[C]App%5CEntity%5CMovie%24userId' => 1,
+'App%5CEntity%5CMovie%24dateCreate' => 20,
+'[C]App%5CEntity%5CMovie%24dateCreate' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 0,
@@ -671,7 +679,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1655367389,
+1 => 1655393479,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1256,6 +1264,44 @@ return [[
         ],
         [
             $o[0],
+        ],
+        []
+    );
+},
+20 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+            clone ($p['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'type' => [
+                    'string',
+                ],
+                'length' => [
+                    16,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
+                'nullable' => [
+                    true,
+                ],
+                'groups' => [
+                    1 => [
+                        'Default',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+            $o[1],
         ],
         []
     );

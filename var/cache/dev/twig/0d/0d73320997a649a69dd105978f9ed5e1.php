@@ -138,12 +138,14 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
                     Czytaj dalej
                 </a>
             </div>
-        ";
+            ";
+            // line 59
+            echo "        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['movie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 60
         echo "    </div>
 ";
         
@@ -163,7 +165,7 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
 
     public function getDebugInfo()
     {
-        return array (  147 => 56,  136 => 51,  129 => 48,  121 => 42,  116 => 40,  109 => 36,  98 => 28,  94 => 26,  90 => 25,  85 => 22,  75 => 14,  73 => 13,  64 => 7,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  149 => 60,  143 => 59,  136 => 51,  129 => 48,  121 => 42,  116 => 40,  109 => 36,  98 => 28,  94 => 26,  90 => 25,  85 => 22,  75 => 14,  73 => 13,  64 => 7,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -222,6 +224,10 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
                     Czytaj dalej
                 </a>
             </div>
+            {#}
+             <div class=\"navigation\">
+                {{ knp_pagination_render(movies) }}
+            </div> {#}
         {% endfor %}
     </div>
 {% endblock %}", "movies/index.html.twig", "C:\\xampp\\htdocs\\movies\\templates\\movies\\index.html.twig");

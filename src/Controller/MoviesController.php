@@ -12,11 +12,15 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Doctrine\ORM\QueryBuilder;
+use Knp\Component\Pager\PaginatorInterface;
+
 
 class MoviesController extends AbstractController
 {
     private $em;
     private $movieRepository;
+
     public function __construct(EntityManagerInterface $em, MovieRepository $movieRepository) 
     {
         $this->em = $em;
@@ -24,15 +28,31 @@ class MoviesController extends AbstractController
     }
 
     #[Route('/movies', name: 'movies')]
-    public function index(): Response
+    public function index(Request $request, PaginatorInterface $paginator)
     {
         $movies = $this->movieRepository->findAll();
-
+        /*$em = $this->getDoctrine()->getManager();
+        $appointmentsRepository = $em->getRepository(Movie::class);
+     
+        $allAppointmentsQuery = $appointmentsRepository->createQueryBuilder('p')
+            ->where('p.status != :status')
+            ->setParameter('status', 'canceled')
+            ->getQuery();
+        
+        $movies = $paginator->paginate(
+          
+        $allAppointmentsQuery,
+         
+        $request->query->getInt('page', 1),
+        3
+        );
+        */
         return $this->render('movies/index.html.twig', [
             'movies' => $movies
         ]);
     }
 
+    
     #[Route('/movies/create', name: 'create_movie')]
     public function create(Request $request): Response
     {

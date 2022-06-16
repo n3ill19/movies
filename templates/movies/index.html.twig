@@ -52,6 +52,10 @@
                     Czytaj dalej
                 </a>
             </div>
+            {#}
+             <div class="navigation">
+                {{ knp_pagination_render(movies) }}
+            </div> {#}
         {% endfor %}
     </div>
 {% endblock %}

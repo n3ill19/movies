@@ -60,6 +60,7 @@ class Movie
      */
     private $dateCreate;
 
+    
     public function __construct()
     {
         $this->actors = new ArrayCollection();
@@ -129,6 +130,7 @@ class Movie
 
         return $this;
     }
+
 
     /**
      * @return Collection|Actor[]
