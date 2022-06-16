@@ -67,7 +67,10 @@ class __TwigTemplate_fc1602973ef6ca440d299c4bdc215692 extends Template
         <div class=\"py-10 text-center\">
             <div class=\"inline-block sm:pt-1\">
                 <h2 class=\"font-bold\">
-                    Stworzył: Admin
+                    Autor: ";
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 12, $this->source); })()), "userId", [], "any", false, false, false, 12), "html", null, true);
+        echo "
                 </h2>
 
                 <p class=\"text-sm text-gray-600\">
@@ -78,7 +81,7 @@ class __TwigTemplate_fc1602973ef6ca440d299c4bdc215692 extends Template
 
              <a 
                 href=\"/movies\"
-                class=\"bg-gray-500 font-bold py-2 px-4 rounded transition-all hover:bg-gray-300\">
+                class=\"uppercase border border-gray-500 text-md py-2 px-3 rounded transition transition-all bg-gray-800 text-white hover:bg-white hover:text-gray-800\">
                 Wróć do wszystkich recenzji
             </a>
             </br>
@@ -99,27 +102,29 @@ class __TwigTemplate_fc1602973ef6ca440d299c4bdc215692 extends Template
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 36, $this->source); })()), "description", [], "any", false, false, false, 36), "html", null, true);
         echo "
         </p>
-     
-            
+            </br>
+            </br>
+            </br>
         ";
-        // line 40
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 40, $this->source); })()), "user", [], "any", false, false, false, 40) && (twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 40, $this->source); })()), "userId", [], "any", false, false, false, 40) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 40, $this->source); })()), "user", [], "any", false, false, false, 40), "id", [], "any", false, false, false, 40)))) {
-            // line 41
+        // line 41
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41) && (twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 41, $this->source); })()), "userId", [], "any", false, false, false, 41) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41), "id", [], "any", false, false, false, 41)))) {
+            // line 42
             echo "            <a 
                 href=\"/movies/edit/";
-            // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 42, $this->source); })()), "id", [], "any", false, false, false, 42), "html", null, true);
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 43, $this->source); })()), "id", [], "any", false, false, false, 43), "html", null, true);
             echo "\"
-                class=\"bg-green-500 font-bold py-2 px-4 rounded transition-all hover:bg-green-300\">
+                class=\"uppercase border border-green-500 text-md py-2 px-3 rounded transition transition-all bg-green-800 text-white hover:bg-white hover:text-green-800\">
+                
                 Edytuj recenzję
             </a>
 
             <a 
                 href=\"/movies/delete/";
-            // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 48, $this->source); })()), "id", [], "any", false, false, false, 48), "html", null, true);
+            // line 50
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 50, $this->source); })()), "id", [], "any", false, false, false, 50), "html", null, true);
             echo "\"
-                class=\"bg-red-500 font-bold py-2 px-4 ml-6 rounded transition-all hover:bg-red-300\">
+                class=\"uppercase border border-red-500 text-md py-2 px-3 ml-6 rounded transition transition-all bg-red-800 text-white hover:bg-white hover:text-red-800\">
                 Usuń recenzję
             </a>
 
@@ -127,7 +132,7 @@ class __TwigTemplate_fc1602973ef6ca440d299c4bdc215692 extends Template
 
         ";
         }
-        // line 56
+        // line 58
         echo "    </div>
 ";
         
@@ -147,7 +152,7 @@ class __TwigTemplate_fc1602973ef6ca440d299c4bdc215692 extends Template
 
     public function getDebugInfo()
     {
-        return array (  131 => 56,  120 => 48,  111 => 42,  108 => 41,  106 => 40,  99 => 36,  90 => 30,  63 => 6,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  136 => 58,  125 => 50,  115 => 43,  112 => 42,  110 => 41,  102 => 36,  93 => 30,  72 => 12,  63 => 6,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -163,7 +168,7 @@ class __TwigTemplate_fc1602973ef6ca440d299c4bdc215692 extends Template
         <div class=\"py-10 text-center\">
             <div class=\"inline-block sm:pt-1\">
                 <h2 class=\"font-bold\">
-                    Stworzył: Admin
+                    Autor: {{ movie.userId }}
                 </h2>
 
                 <p class=\"text-sm text-gray-600\">
@@ -174,7 +179,7 @@ class __TwigTemplate_fc1602973ef6ca440d299c4bdc215692 extends Template
 
              <a 
                 href=\"/movies\"
-                class=\"bg-gray-500 font-bold py-2 px-4 rounded transition-all hover:bg-gray-300\">
+                class=\"uppercase border border-gray-500 text-md py-2 px-3 rounded transition transition-all bg-gray-800 text-white hover:bg-white hover:text-gray-800\">
                 Wróć do wszystkich recenzji
             </a>
             </br>
@@ -189,18 +194,20 @@ class __TwigTemplate_fc1602973ef6ca440d299c4bdc215692 extends Template
         <p class=\"text-xl py-6\">
             {{ movie.description }}
         </p>
-     
-            
+            </br>
+            </br>
+            </br>
         {% if app.user and movie.userId == app.user.id %}
             <a 
                 href=\"/movies/edit/{{ movie.id }}\"
-                class=\"bg-green-500 font-bold py-2 px-4 rounded transition-all hover:bg-green-300\">
+                class=\"uppercase border border-green-500 text-md py-2 px-3 rounded transition transition-all bg-green-800 text-white hover:bg-white hover:text-green-800\">
+                
                 Edytuj recenzję
             </a>
 
             <a 
                 href=\"/movies/delete/{{ movie.id }}\"
-                class=\"bg-red-500 font-bold py-2 px-4 ml-6 rounded transition-all hover:bg-red-300\">
+                class=\"uppercase border border-red-500 text-md py-2 px-3 ml-6 rounded transition transition-all bg-red-800 text-white hover:bg-white hover:text-red-800\">
                 Usuń recenzję
             </a>
 

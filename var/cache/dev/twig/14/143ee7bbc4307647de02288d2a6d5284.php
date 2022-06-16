@@ -25,6 +25,7 @@ class __TwigTemplate_48bb85798b1208fa12ad334296cf7053 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -49,37 +50,53 @@ class __TwigTemplate_48bb85798b1208fa12ad334296cf7053 extends Template
     }
 
     // line 3
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        echo "Nowa recenzja";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
-        echo "<div class=\"w-4/5 m-auto pt-40\">
-    <h1 class=\"text-6xl text-center pb-12\">
-        Nowa recenzja
-    </h1>
-    ";
-        // line 8
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'form_start');
+        // line 6
+        echo "    <div class=\"w-4/5 m-auto text-center\">
+        <div class=\"py-12 border-b border-gray-200\">
+            <h1 class=\"text-6xl pt-12 pb-8\">
+                Nowa recenzja
+            </h1>
+
+            ";
+        // line 12
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_start');
+        echo "
+                ";
+        // line 13
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'widget');
+        echo "
+                </br>
+                </br>
+            <button    
+                    type=\"submit\"
+                    class=\"uppercase mt-15 bg-blue-500 text-gray-100 text-md font-extrabold py-4 px-8 rounded-3xl\">
+                    Stwórz
+            </button>
+            ";
+        // line 21
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'form_end');
         echo "
 
-    ";
-        // line 10
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'widget');
-        echo "
-    </br>
-        <button    
-            type=\"submit\"
-            class=\"uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl\">
-            Stwórz
-        </button>
-
-    ";
-        // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_end');
-        echo "
+    </div>
 </div>
 ";
         
@@ -99,29 +116,34 @@ class __TwigTemplate_48bb85798b1208fa12ad334296cf7053 extends Template
 
     public function getDebugInfo()
     {
-        return array (  81 => 18,  70 => 10,  65 => 8,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  96 => 21,  85 => 13,  81 => 12,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"./base.html.twig\" %}
 
+{% block title %}Nowa recenzja{% endblock %}
+
 {% block body %}
-<div class=\"w-4/5 m-auto pt-40\">
-    <h1 class=\"text-6xl text-center pb-12\">
-        Nowa recenzja
-    </h1>
-    {{ form_start(form) }}
+    <div class=\"w-4/5 m-auto text-center\">
+        <div class=\"py-12 border-b border-gray-200\">
+            <h1 class=\"text-6xl pt-12 pb-8\">
+                Nowa recenzja
+            </h1>
 
-    {{ form_widget(form) }}
-    </br>
-        <button    
-            type=\"submit\"
-            class=\"uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl\">
-            Stwórz
-        </button>
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+                </br>
+                </br>
+            <button    
+                    type=\"submit\"
+                    class=\"uppercase mt-15 bg-blue-500 text-gray-100 text-md font-extrabold py-4 px-8 rounded-3xl\">
+                    Stwórz
+            </button>
+            {{ form_end(form) }}
 
-    {{ form_end(form) }}
+    </div>
 </div>
 {% endblock %}
 ", "movies/create.html.twig", "C:\\xampp\\htdocs\\movies\\templates\\movies\\create.html.twig");

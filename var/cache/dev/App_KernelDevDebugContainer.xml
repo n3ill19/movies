@@ -227,7 +227,7 @@
     <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
     <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
-    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_range">3</parameter>
     <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="maker.compatible_check.doctrine.supports_attributes">true</parameter>
     <parameter key="console.command.ids" type="collection"/>
@@ -281,13 +281,7 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\SecurityController"/>
       </call>
     </service>
-    <service id="App\DataFixtures\ActorFixtures" class="App\DataFixtures\ActorFixtures" autowire="true" autoconfigure="true">
-      <tag name="doctrine.fixture.orm"/>
-    </service>
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
-      <tag name="doctrine.fixture.orm"/>
-    </service>
-    <service id="App\DataFixtures\MovieFixtures" class="App\DataFixtures\MovieFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
     <service id="App\Form\ContactType" class="App\Form\ContactType" autowire="true" autoconfigure="true">
@@ -4080,15 +4074,7 @@
       <call method="addFixtures">
         <argument type="collection">
           <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\ActorFixtures"/>
-            <argument key="groups" type="collection"/>
-          </argument>
-          <argument type="collection">
             <argument key="fixture" type="service" id="App\DataFixtures\AppFixtures"/>
-            <argument key="groups" type="collection"/>
-          </argument>
-          <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\MovieFixtures"/>
             <argument key="groups" type="collection"/>
           </argument>
         </argument>
@@ -4940,7 +4926,7 @@
         <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
         <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
         <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
-        <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageRange">3</argument>
         <argument key="defaultPageLimit">null</argument>
       </argument>
     </service>
@@ -4967,12 +4953,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\ActorFixtures" class="App\DataFixtures\ActorFixtures" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\ActorFixtures" class="App\DataFixtures\ActorFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\MovieFixtures" class="App\DataFixtures\MovieFixtures" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\MovieFixtures" class="App\DataFixtures\MovieFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactType" class="App\Form\ContactType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContactType" class="App\Form\ContactType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MovieFormType" class="App\Form\MovieFormType" autowire="true" abstract="true"/>

@@ -17,9 +17,7 @@ class MoviesController extends AbstractController
 {
     private $em;
     private $movieRepository;
-    public function __construct(
-        EntityManagerInterface $em, 
-        MovieRepository $movieRepository) 
+    public function __construct(EntityManagerInterface $em, MovieRepository $movieRepository) 
     {
         $this->em = $em;
         $this->movieRepository = $movieRepository;
@@ -58,7 +56,7 @@ class MoviesController extends AbstractController
                 } catch (FileException $e) {
                     return new Response($e->getMessage());
                 }
-
+                $newMovie->setUserId($this->getUser()->getId());
                 $newMovie->setImagePath('/uploads/' . $newFileName);
             }
 
@@ -76,7 +74,9 @@ class MoviesController extends AbstractController
     #[Route('/movies/edit/{id}', name: 'edit_movie')]
     public function edit($id, Request $request): Response 
     {
+        $this->checkLoggedInUser($id);
         $movie = $this->movieRepository->find($id);
+
         $form = $this->createForm(MovieFormType::class, $movie);
 
         $form->handleRequest($request);
@@ -110,6 +110,7 @@ class MoviesController extends AbstractController
                 $movie->setTitle($form->get('title')->getData());
                 $movie->setReleaseYear($form->get('releaseYear')->getData());
                 $movie->setDescription($form->get('description')->getData());
+                $movie->setDateCreate($form->get('dateCreate')->getData());
 
                 $this->em->flush();
                 return $this->redirectToRoute('movies');
@@ -125,6 +126,7 @@ class MoviesController extends AbstractController
     #[Route('/movies/delete/{id}', methods: ['GET', 'DELETE'], name: 'delete_movie')]
     public function delete($id): Response
     {
+        $this->checkLoggedInUser($id);
         $movie = $this->movieRepository->find($id);
         $this->em->remove($movie);
         $this->em->flush();
@@ -141,5 +143,10 @@ class MoviesController extends AbstractController
             'movie' => $movie
         ]);
     }
-
+    
+    private function checkLoggedInUser($movieId) {
+        if($this->getUser() == null || $this->getUser()->getId() !== $movieId) {
+            return $this->redirectToRoute('movies');
+        }
+    }
 }

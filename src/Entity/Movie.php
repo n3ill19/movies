@@ -50,10 +50,15 @@ class Movie
     private $actors;
 
     /**
-     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $userId;
+
+    /**
+     * @ORM\Column(type="string", length=16, nullable=true)
+     * @Assert\NotBlank
+     */
+    private $dateCreate;
 
     public function __construct()
     {
@@ -109,6 +114,18 @@ class Movie
     public function setImagePath(?string $imagePath): self
     {
         $this->imagePath = $imagePath;
+
+        return $this;
+    }
+    //DODANE dla daty i czasu utworzenia:
+    public function getDateCreate(): ?string
+    {
+        return $this->dateCreate;
+    }
+
+    public function setDateCreate(?string $dateCreate): self
+    {
+        $this->dateCreate = $dateCreate;
 
         return $this;
     }

@@ -58,7 +58,7 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
         // line 4
         echo "    <div class=\"w-4/5 m-auto text-center\">
         <div class=\"py-12 border-b border-gray-200\">
-            <h1 class=\"text-6xl pt-12 pb-8\">
+            <h1 class=\"text-6xl pt-11 pb-3\">
                 Recenzje filmów (";
         // line 7
         echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["movies"]) || array_key_exists("movies", $context) ? $context["movies"] : (function () { throw new RuntimeError('Variable "movies" does not exist.', 7, $this->source); })())), "html", null, true);
@@ -66,16 +66,16 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
             </h1>
 
         </div>
-    </div>
+        </div>
 
-    ";
+        ";
         // line 13
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13)) {
             // line 14
             echo "        <div class=\"mx-auto w-4/5 my-8\">
             <a 
                 href=\"/movies/create\" 
-                class=\"uppercase border border-gray-500 text-lg py-4 px-6 rounded transition transition-all bg-gray-800 text-white hover:bg-white hover:text-gray-800\">
+                class=\"uppercase border border-gray-500 text-md py-4 px-6 rounded transition transition-all bg-gray-800 text-white hover:bg-white hover:text-gray-800\">
                 Stwórz nową recenzję
             </a>
         </div>
@@ -110,22 +110,31 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
             echo "
                 </h2>
 
-                <span class=\"text-gray-500\">
-                    Od <span class=\"italic text-sm text-gray-800\"> Admin
-        
+                
+                    <span class=\"italic text-sm text-gray-800\"> Autor: ";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "userId", [], "any", false, false, false, 40), "html", null, true);
+            echo "
+                 <br />
+                    <span class=\"italic text-sm text-gray-800\"> Utworzone: ";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "dateCreate", [], "any", false, false, false, 42), "html", null, true);
+            echo "
+                 
                 </span>
 
                 <p class=\"text-base text-gray-700 pt-4 pb-10 leading-8 font-light text-overflow:ellipsis white-space:nowrap overflow:hidden\">
-                    ";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "description", [], "any", false, false, false, 45), "html", null, true);
+                ";
+            // line 48
+            echo "                    ";
+            echo twig_escape_filter($this->env, (twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "description", [], "any", false, false, false, 48), 0, 175) . "..."), "html", null, true);
             echo "
                 </p>
 
                 <a href=\"/movies/";
-            // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "id", [], "any", false, false, false, 48), "html", null, true);
-            echo "\" class=\"uppercase border border-gray-500 text-gray-600 text-lg py-4 px-12 rounded transition transition-all hover:bg-gray-800 hover:text-white\">
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "id", [], "any", false, false, false, 51), "html", null, true);
+            echo "\" class=\"uppercase border border-gray-500 text-gray-600 text-md py-4 px-12 rounded transition transition-all hover:bg-gray-800 hover:text-white\">
                     Czytaj dalej
                 </a>
             </div>
@@ -134,7 +143,7 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['movie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 56
         echo "    </div>
 ";
         
@@ -154,7 +163,7 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
 
     public function getDebugInfo()
     {
-        return array (  138 => 53,  127 => 48,  121 => 45,  109 => 36,  98 => 28,  94 => 26,  90 => 25,  85 => 22,  75 => 14,  73 => 13,  64 => 7,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  147 => 56,  136 => 51,  129 => 48,  121 => 42,  116 => 40,  109 => 36,  98 => 28,  94 => 26,  90 => 25,  85 => 22,  75 => 14,  73 => 13,  64 => 7,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -164,18 +173,18 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
 {% block body %}
     <div class=\"w-4/5 m-auto text-center\">
         <div class=\"py-12 border-b border-gray-200\">
-            <h1 class=\"text-6xl pt-12 pb-8\">
+            <h1 class=\"text-6xl pt-11 pb-3\">
                 Recenzje filmów ({{ movies|length }})
             </h1>
 
         </div>
-    </div>
+        </div>
 
-    {% if app.user %}
+        {% if app.user %}
         <div class=\"mx-auto w-4/5 my-8\">
             <a 
                 href=\"/movies/create\" 
-                class=\"uppercase border border-gray-500 text-lg py-4 px-6 rounded transition transition-all bg-gray-800 text-white hover:bg-white hover:text-gray-800\">
+                class=\"uppercase border border-gray-500 text-md py-4 px-6 rounded transition transition-all bg-gray-800 text-white hover:bg-white hover:text-gray-800\">
                 Stwórz nową recenzję
             </a>
         </div>
@@ -197,16 +206,19 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
                     {{ movie.title }}
                 </h2>
 
-                <span class=\"text-gray-500\">
-                    Od <span class=\"italic text-sm text-gray-800\"> Admin
-        
+                
+                    <span class=\"italic text-sm text-gray-800\"> Autor: {{ movie.userId }}
+                 <br />
+                    <span class=\"italic text-sm text-gray-800\"> Utworzone: {{ movie.dateCreate }}
+                 
                 </span>
 
                 <p class=\"text-base text-gray-700 pt-4 pb-10 leading-8 font-light text-overflow:ellipsis white-space:nowrap overflow:hidden\">
-                    {{ movie.description }}
+                {#}Dodane opcja skracania tekstu wyświetlanego{#}
+                    {{ movie.description[:175] ~ '...'}}
                 </p>
 
-                <a href=\"/movies/{{ movie.id }}\" class=\"uppercase border border-gray-500 text-gray-600 text-lg py-4 px-12 rounded transition transition-all hover:bg-gray-800 hover:text-white\">
+                <a href=\"/movies/{{ movie.id }}\" class=\"uppercase border border-gray-500 text-gray-600 text-md py-4 px-12 rounded transition transition-all hover:bg-gray-800 hover:text-white\">
                     Czytaj dalej
                 </a>
             </div>

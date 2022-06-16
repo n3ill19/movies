@@ -62,14 +62,14 @@ class __TwigTemplate_76575871302185cc16bff01abdd54939 extends Template
 
     }
 
-    // line 5
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         echo "    <div class=\"w-4/5 m-auto text-center\">
         <div class=\"py-12 border-b border-gray-200\">
             <h1 class=\"text-6xl pt-12 pb-8\">
@@ -77,21 +77,22 @@ class __TwigTemplate_76575871302185cc16bff01abdd54939 extends Template
             </h1>
 
             ";
-        // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 12, $this->source); })()), 'form_start');
-        echo "
-                ";
         // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 13, $this->source); })()), "email", [], "any", false, false, false, 13), 'row');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 13, $this->source); })()), 'form_start');
         echo "
                 ";
         // line 14
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 14, $this->source); })()), "plainPassword", [], "any", false, false, false, 14), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 14, $this->source); })()), "email", [], "any", false, false, false, 14), 'row');
+        echo "
+                ";
+        // line 15
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 15, $this->source); })()), "plainPassword", [], "any", false, false, false, 15), 'row');
         echo "
             </br>
+            </br>
             ";
-        // line 16
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 16, $this->source); })()), "agreeTerms", [], "any", false, false, false, 16), 'row');
+        // line 18
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 18, $this->source); })()), "agreeTerms", [], "any", false, false, false, 18), 'row');
         echo "
        
 
@@ -102,8 +103,8 @@ class __TwigTemplate_76575871302185cc16bff01abdd54939 extends Template
             </button>
             
             ";
-        // line 25
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 25, $this->source); })()), 'form_end');
+        // line 27
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 27, $this->source); })()), 'form_end');
         echo "
 
         </div>
@@ -126,7 +127,7 @@ class __TwigTemplate_76575871302185cc16bff01abdd54939 extends Template
 
     public function getDebugInfo()
     {
-        return array (  106 => 25,  94 => 16,  89 => 14,  85 => 13,  81 => 12,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  107 => 27,  95 => 18,  89 => 15,  85 => 14,  81 => 13,  73 => 7,  66 => 6,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -134,6 +135,7 @@ class __TwigTemplate_76575871302185cc16bff01abdd54939 extends Template
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
+
 
 {% block body %}
     <div class=\"w-4/5 m-auto text-center\">
@@ -145,6 +147,7 @@ class __TwigTemplate_76575871302185cc16bff01abdd54939 extends Template
             {{ form_start(registrationForm) }}
                 {{ form_row(registrationForm.email) }}
                 {{ form_row(registrationForm.plainPassword) }}
+            </br>
             </br>
             {{ form_row(registrationForm.agreeTerms) }}
        

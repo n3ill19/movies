@@ -1,38 +1,32 @@
 {% extends './base.html.twig' %}
 
+{% block title %}Formularz kontaktowy{% endblock %}
 
 {% block body %}
 
-    <div class="w-4/5 m-auto">
+    <div class="w-4/5 m-auto text-center">
         <div class="py-12 border-b border-gray-200">
-            <h1 class="text-5xl pt-12 pb-8">
-                Formularz kontaktowy:
+            <h1 class="text-6xl pt-12 pb-8">
+                Formularz kontaktowy
             </h1>
 
+            {{ form_start(our_form) }}
+                {{ form_row(our_form.fullName) }}
+                {{ form_row(our_form.email) }}
+                {{ form_row(our_form.message) }}
+            </br>
+
+
+             <button 
+                type="submit" 
+                class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg w-1/5 mt-10 font-extrabold py-4 px-8 rounded-3xl">
+                Wyślij
+            </button>
+            {{ form_end(our_form) }}
+
         </div>
+
     </div>
 
-</br>
-<div class="w-4/5 bg-gray contact-form m-auto">
-    <div class="form-group">
-{{ form_start(our_form) }}
-    {{ form_row(our_form.fullName, {'attr': {'class': 'form-control'}}) }}
-</br>
-</div>
-<div class="form-group">
-    {{ form_row(our_form.email, {'attr': {'class': 'form-control'}}) }}
-</br>
-</div>
-<div class="form-group">
-    {{ form_row(our_form.message, {'attr': {'class': 'form-control'}}) }}
-
-</div>
-
-<div class="form-group">
-    <input type="submit" value="Send" class="btn btn-primary py-3 px-5">
-</div>
-{{ form_end(our_form) }}
-</div>
-
-</div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163403.68717102916!2d18.86710949447347!3d50.21380790373676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce2336a1ccd1%3A0xb9af2a350559fabb!2sKatowice!5e0!3m2!1spl!2spl!4v1655381186084!5m2!1spl!2spl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 {% endblock %}

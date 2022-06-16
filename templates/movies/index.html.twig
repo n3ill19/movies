@@ -3,18 +3,18 @@
 {% block body %}
     <div class="w-4/5 m-auto text-center">
         <div class="py-12 border-b border-gray-200">
-            <h1 class="text-6xl pt-12 pb-8">
+            <h1 class="text-6xl pt-11 pb-3">
                 Recenzje filmów ({{ movies|length }})
             </h1>
 
         </div>
-    </div>
+        </div>
 
-    {% if app.user %}
+        {% if app.user %}
         <div class="mx-auto w-4/5 my-8">
             <a 
                 href="/movies/create" 
-                class="uppercase border border-gray-500 text-lg py-4 px-6 rounded transition transition-all bg-gray-800 text-white hover:bg-white hover:text-gray-800">
+                class="uppercase border border-gray-500 text-md py-4 px-6 rounded transition transition-all bg-gray-800 text-white hover:bg-white hover:text-gray-800">
                 Stwórz nową recenzję
             </a>
         </div>
@@ -36,16 +36,19 @@
                     {{ movie.title }}
                 </h2>
 
-                <span class="text-gray-500">
-                    Od <span class="italic text-sm text-gray-800"> Admin
-        
+                
+                    <span class="italic text-sm text-gray-800"> Autor: {{ movie.userId }}
+                 <br />
+                    <span class="italic text-sm text-gray-800"> Utworzone: {{ movie.dateCreate }}
+                 
                 </span>
 
                 <p class="text-base text-gray-700 pt-4 pb-10 leading-8 font-light text-overflow:ellipsis white-space:nowrap overflow:hidden">
-                    {{ movie.description }}
+                {#}Dodane opcja skracania tekstu wyświetlanego{#}
+                    {{ movie.description[:175] ~ '...'}}
                 </p>
 
-                <a href="/movies/{{ movie.id }}" class="uppercase border border-gray-500 text-gray-600 text-lg py-4 px-12 rounded transition transition-all hover:bg-gray-800 hover:text-white">
+                <a href="/movies/{{ movie.id }}" class="uppercase border border-gray-500 text-gray-600 text-md py-4 px-12 rounded transition transition-all hover:bg-gray-800 hover:text-white">
                     Czytaj dalej
                 </a>
             </div>

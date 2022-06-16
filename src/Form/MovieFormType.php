@@ -3,8 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Movie;
+use DateTime;
+use Doctrine\DBAL\Types\DateTimeType;
 use Symfony\Component\Form\AbstractType;
-//use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -19,7 +20,7 @@ class MovieFormType extends AbstractType
         $builder
             ->add('title', TextType::class, [
                 'attr' => array(
-                    'class' => 'bg-transparent block border-b-2 w-full h-20 text-6xl outline-none',
+                    'class' => 'bg-transparent block mt-10 border-b-2 w-full h-20 text-2xl outline-none',
                     'placeholder' => 'Podaj tytuł filmu...',
                 ),
                 'label' => false,
@@ -27,31 +28,34 @@ class MovieFormType extends AbstractType
             ])
             ->add('releaseYear', IntegerType::class, [
                 'attr' => array(
-                    'class' => 'bg-transparent block mt-10 border-b-2 w-full h-20 text-6xl outline-none',
+                    'class' => 'bg-transparent block mt-10 border-b-2 w-full h-20 text-2xl outline-none',
                     'placeholder' => 'Podaj datę filmu...'
+                ),
+                'label' => false,
+                'required' => false
+            ])
+            //DODANIE DATY
+            ->add('dateCreate', TextType::class, [
+                'attr' => array(
+                    'class' => 'bg-transparent block mt-10 border-b-2 w-full h-20 text-2xl outline-none',
+                    'placeholder' => 'Podaj datę utworzenia postu dla formatu: dd.mm.rrrr hh:mm'
                 ),
                 'label' => false,
                 'required' => false
             ])
             ->add('description', TextareaType::class, [
                 'attr' => array(
-                    'class' => 'bg-transparent block mt-10 border-b-2 w-full h-60 text-6xl outline-none',
+                    'class' => 'bg-transparent block mt-10 border-b-2 w-full h-20 text-2xl outline-none',
                     'placeholder' => 'Twoja recenzja...'
+                
                 ),
                 'label' => false,
                 'required' => false,
             ])
-            //Edytor WYSIWYG
-           // ->add('titre', TextType::class)
-           // ->add('content', CKEditorType::class)
-
             ->add('imagePath', FileType::class, array(
                 'required' => false,
                 'mapped' => false
-            ))
-            // ->add('actors')
-
-
+            )) 
         ;
     }
 
