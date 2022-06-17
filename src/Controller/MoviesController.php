@@ -28,9 +28,23 @@ class MoviesController extends AbstractController
     }
 
     #[Route('/movies', name: 'movies')]
-    public function index(Request $request, PaginatorInterface $paginator)
+    public function index(EntityManagerInterface $em, Request $request, PaginatorInterface $paginator): Response
     {
-        $movies = $this->movieRepository->findAll();
+       $movies = $this->movieRepository->findAll();
+
+    //Oficjalne ze strony:
+    /*
+       $dql   = "SELECT id FROM Movie:movie id";
+       $query = $em->createQuery($dql);
+   
+       $pagination = $paginator->paginate(
+           $query, //query NOT result 
+           $request->query->getInt('page', 1), //page number
+           3 
+       );
+    */
+
+       //Nie działa Paginacja - błąd getDoctrine
         /*$em = $this->getDoctrine()->getManager();
         $appointmentsRepository = $em->getRepository(Movie::class);
      
@@ -47,6 +61,30 @@ class MoviesController extends AbstractController
         3
         );
         */
+
+        //Nowy sposób:
+        /*
+        $movies = $movies->getRepository(Movie::class);
+        
+       
+        //  > select TABLE_ROWS FROM INFORMATION_SCHEMA.TABLES where TABLE_NAME='movie';
+        $manualCounting = 6;
+        
+        $movieQuery = $em
+            ->createQuery("SELECT id FROM Entity\Movie id")
+            ->setHint('knp_paginator.count', $manualCounting);
+        
+        // Paginate the results of the query
+        $movies = $paginator->paginate(
+            // Doctrine Query, not results
+            $movieQuery,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            3
+        ); 
+        */
+
         return $this->render('movies/index.html.twig', [
             'movies' => $movies
         ]);
