@@ -6,6 +6,8 @@ use App\Entity\Movie;
 use App\Form\MovieFormType;
 use App\Repository\MovieRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry as PersistenceManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,6 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Doctrine\ORM\QueryBuilder;
 use Knp\Component\Pager\PaginatorInterface;
+use Doctrine\ORM\Tools\Console\ConsoleRunner;
 
 
 class MoviesController extends AbstractController
@@ -25,72 +28,60 @@ class MoviesController extends AbstractController
     {
         $this->em = $em;
         $this->movieRepository = $movieRepository;
-    }
-
+    } 
+    
     #[Route('/movies', name: 'movies')]
-    public function index(): Response
+    public function index(Request $request, PaginatorInterface $paginator, ManagerRegistry $doctrine): Response
     {
-       $movies = $this->movieRepository->findAll();
+        //find(All) - SELECT * FROM movies;
+        //find() - SELECT * FROM movies WHERE id = 1; 
+        //findBy() - SELECT * FROM movies ORDER BY id DESC
+       
+        //Implementacja wpisana bezpośrednio w return:
+        $movies = $this->movieRepository->findAll();
 
-    //Oficjalne ze strony:
-    /*
-       $dql   = "SELECT id FROM Movie:movie id";
+    
+    /* Oficjalne ze strony:
+       $dql   = "SELECT * FROM movies";
        $query = $em->createQuery($dql);
    
        $pagination = $paginator->paginate(
            $query, //query NOT result 
-           $request->query->getInt('page', 1), //page number
+           $request->query->getInt('page ', 1), //page number
            3 
        );
-    */
-
-       //Nie działa Paginacja - błąd getDoctrine
-        /*$em = $this->getDoctrine()->getManager();
-        $appointmentsRepository = $em->getRepository(Movie::class);
-     
-        $allAppointmentsQuery = $appointmentsRepository->createQueryBuilder('p')
+       //KOLEJNY SPOSÓB:
+       $em = $this->$doctrine->getManager();
+        
+        $movieRepository = $em->getRepository(Movie::class);
+                
+        // Find all the data on the Appointments table, filter your query as you need
+        $allmovieQuery = $movieRepository->createQueryBuilder('p')
             ->where('p.status != :status')
             ->setParameter('status', 'canceled')
             ->getQuery();
         
-        $movies = $paginator->paginate(
-          
-        $allAppointmentsQuery,
-         
-        $request->query->getInt('page', 1),
-        3
-        );
-        */
-
-        //Nowy sposób:
-        /*
-        $movies = $movies->getRepository(Movie::class);
-        
-       
-        //  > select TABLE_ROWS FROM INFORMATION_SCHEMA.TABLES where TABLE_NAME='movie';
-        $manualCounting = 6;
-        
-        $movieQuery = $em
-            ->createQuery("SELECT id FROM Entity\Movie id")
-            ->setHint('knp_paginator.count', $manualCounting);
-        
         // Paginate the results of the query
         $movies = $paginator->paginate(
             // Doctrine Query, not results
-            $movieQuery,
+            $allmovieQuery,
             // Define the page parameter
             $request->query->getInt('page', 1),
             // Items per page
             3
-        ); 
-        */
-
+        );*/
+        
+       
         return $this->render('movies/index.html.twig', [
             'movies' => $movies
-        ]);
+        ]); 
+
+        /*Kolejna metoda cz.1
+        return $this->render('movies/index.html.twig', [
+            'movies' => $paginatorService->paginate($entityManager->getRepository(Movie::class)->findAll(), $request)
+        ]);*/
     }
 
-    
     #[Route('/movies/create', name: 'create_movie')]
     public function create(Request $request): Response
     {
@@ -208,3 +199,20 @@ class MoviesController extends AbstractController
         }
     }
 }
+/* Kolejna metoda cz.2
+class PaginatorService
+{
+    public function __construct(
+        private PaginatorInterface $paginator,
+    ) {
+    }
+
+    public function paginate($query, Request $request)
+    {
+        return $this->paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            6
+        );
+    }
+} */

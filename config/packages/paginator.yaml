@@ -1,6 +1,6 @@
   # config/packages/paginator.yaml
 knp_paginator:
-   page_range: 3 # liczba linków w numeracji stron
+   page_range: 5 # liczba linków w numeracji stron
     default_options:                                  
         page_name: page # nazwa zmiennej w adresie Url, np: ?page=1              
         sort_field_name: sort           

@@ -45,11 +45,6 @@ class Movie
     private $imagePath;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Actor::class, inversedBy="movies")
-     */
-    private $actors;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $userId;
@@ -60,11 +55,6 @@ class Movie
      */
     private $dateCreate;
 
-    
-    public function __construct()
-    {
-        $this->actors = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -132,30 +122,7 @@ class Movie
     }
 
 
-    /**
-     * @return Collection|Actor[]
-     */
-    public function getActors(): Collection
-    {
-        return $this->actors;
-    }
-
-    public function addActor(Actor $actor): self
-    {
-        if (!$this->actors->contains($actor)) {
-            $this->actors[] = $actor;
-        }
-
-        return $this;
-    }
-
-    public function removeActor(Actor $actor): self
-    {
-        $this->actors->removeElement($actor);
-
-        return $this;
-    }
-
+ 
     public function getUserId(): ?int
     {
         return $this->userId;

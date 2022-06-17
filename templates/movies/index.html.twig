@@ -23,6 +23,7 @@
     <div class="md:grid lg:grid-cols-3 gap-20 w-4/5 mx-auto py-15 ">
         <!-- Review Item -->
         {% for movie in movies %}
+       
             <div class="text-center pt-8 pb-4">
                 <img
                     src="{{ movie.imagePath }}"
@@ -52,10 +53,12 @@
                     Czytaj dalej
                 </a>
             </div>
-            {#}
+           
+        {% endfor %}
+          
+        {#}Przyciski do nawigacji Paginacją:
              <div class="navigation">
                 {{ knp_pagination_render(movies) }}
             </div> {#}
-        {% endfor %}
     </div>
 {% endblock %}
