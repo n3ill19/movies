@@ -28,7 +28,7 @@ class MoviesController extends AbstractController
     }
 
     #[Route('/movies', name: 'movies')]
-    public function index(EntityManagerInterface $em, Request $request, PaginatorInterface $paginator): Response
+    public function index(): Response
     {
        $movies = $this->movieRepository->findAll();
 

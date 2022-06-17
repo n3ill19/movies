@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* base.html.twig */
+/* ./base.html.twig */
 class __TwigTemplate_0d49452628a29db7b0439a7c0a65a5ec extends Template
 {
     private $source;
@@ -38,7 +38,7 @@ class __TwigTemplate_0d49452628a29db7b0439a7c0a65a5ec extends Template
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -257,7 +257,7 @@ class __TwigTemplate_0d49452628a29db7b0439a7c0a65a5ec extends Template
 
     public function getTemplateName()
     {
-        return "base.html.twig";
+        return "./base.html.twig";
     }
 
     public function isTraitable()
@@ -421,6 +421,6 @@ class __TwigTemplate_0d49452628a29db7b0439a7c0a65a5ec extends Template
             <script type=\"text/javascript\" src=\"https://www.google.com/recaptcha/api.js?onload=onGoogleReCaptchaApiLoad&render=explicit&hl={{app.request.locale}}\" async defer>
             </script>
     </body>
-</html>", "base.html.twig", "C:\\xampp\\htdocs\\movies\\templates\\base.html.twig");
+</html>", "./base.html.twig", "C:\\xampp\\htdocs\\movies\\templates\\base.html.twig");
     }
 }
