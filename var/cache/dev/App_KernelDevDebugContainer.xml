@@ -227,7 +227,7 @@
     <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
     <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
-    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_range">25</parameter>
     <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="maker.compatible_check.doctrine.supports_attributes">true</parameter>
     <parameter key="console.command.ids" type="collection"/>
@@ -4926,7 +4926,7 @@
         <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
         <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
         <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
-        <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageRange">25</argument>
         <argument key="defaultPageLimit">null</argument>
       </argument>
     </service>
@@ -5305,10 +5305,10 @@
         <argument key="mailer" type="service_closure" id="mailer.mailer"/>
       </argument>
     </service>
-    <service id=".service_locator.I3XUlBy" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.hvKzUl4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="doctrine" type="service_closure" id="doctrine"/>
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="paginator" type="service_closure" id="knp_paginator"/>
       </argument>
     </service>
@@ -5325,11 +5325,11 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.wbZMESz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.aAbH0Zi" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ContactController::index" type="service_closure" id=".service_locator.6E9xidT"/>
-        <argument key="App\Controller\MoviesController::index" type="service_closure" id=".service_locator.I3XUlBy"/>
+        <argument key="App\Controller\MoviesController::index" type="service_closure" id=".service_locator.hvKzUl4"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.YU8H6ve"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.zFcJjKU"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -5339,7 +5339,7 @@
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.bRdave9"/>
         <argument key="App\Controller\ContactController:index" type="service_closure" id=".service_locator.6E9xidT"/>
-        <argument key="App\Controller\MoviesController:index" type="service_closure" id=".service_locator.I3XUlBy"/>
+        <argument key="App\Controller\MoviesController:index" type="service_closure" id=".service_locator.hvKzUl4"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.YU8H6ve"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.zFcJjKU"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -5680,12 +5680,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.wbZMESz"/>
+      <argument type="service" id=".service_locator.aAbH0Zi"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.wbZMESz"/>
+      <argument type="service" id=".service_locator.aAbH0Zi"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -6419,15 +6419,15 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.wbZMESz"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.aAbH0Zi"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~9gchrx5"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.mU7E2aG" alias=".service_locator.I3XUlBy"/>
+    <service id=".service_locator.6XxFdB9" alias=".service_locator.hvKzUl4"/>
     <service id=".service_locator.riGN6sa" alias=".service_locator.YU8H6ve"/>
-    <service id=".service_locator.wr20546" alias=".service_locator.wbZMESz"/>
+    <service id=".service_locator.l0I_6xj" alias=".service_locator.aAbH0Zi"/>
     <service id=".service_locator.olGN41B" alias=".service_locator.sTIRclW"/>
     <service id=".service_locator.Zc_RP4a" alias=".service_locator.OeUEPiJ"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>
@@ -6452,7 +6452,7 @@
     <service id=".service_locator.FatRZu2" alias=".service_locator.bRdave9"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
     <service id=".service_locator.k3yKEdo" alias=".service_locator.6E9xidT"/>
-    <service id=".service_locator.8y8Sthv" alias=".service_locator.I3XUlBy"/>
+    <service id=".service_locator.3X5YS_K" alias=".service_locator.hvKzUl4"/>
     <service id=".service_locator.DoCD.2o" alias=".service_locator.YU8H6ve"/>
     <service id=".service_locator.URfgn8g" alias=".service_locator.zFcJjKU"/>
     <service id=".service_locator.Glg4Sov" alias=".service_locator.jIxfAsi"/>

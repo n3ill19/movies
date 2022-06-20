@@ -68,7 +68,7 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
         </div>
         </div>
 
-        ";
+    ";
         // line 13
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13)) {
             // line 14
@@ -82,21 +82,22 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
     ";
         }
         // line 22
-        echo "    
+        echo "   
     <div class=\"md:grid lg:grid-cols-3 gap-20 w-4/5 mx-auto py-15 \">
         <!-- Review Item -->
+        
         ";
-        // line 25
+        // line 26
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["movies"]) || array_key_exists("movies", $context) ? $context["movies"] : (function () { throw new RuntimeError('Variable "movies" does not exist.', 25, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["movies"]) || array_key_exists("movies", $context) ? $context["movies"] : (function () { throw new RuntimeError('Variable "movies" does not exist.', 26, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["movie"]) {
-            // line 26
-            echo "       
+            // line 27
+            echo "        
             <div class=\"text-center pt-8 pb-4\">
                 <img
                     src=\"";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "imagePath", [], "any", false, false, false, 29), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "imagePath", [], "any", false, false, false, 30), "html", null, true);
             echo "\"
                     alt=\"\"
                     class=\"shadow-xl rounded-md w3-image\"
@@ -106,50 +107,55 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
 
                 <h2 class=\"text-gray-700 font-bold text-3xl py-2\">
                     ";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "title", [], "any", false, false, false, 37), "html", null, true);
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "title", [], "any", false, false, false, 38), "html", null, true);
             echo "
                 </h2>
 
                 
                     <span class=\"italic text-sm text-gray-800\"> Autor: ";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "userId", [], "any", false, false, false, 41), "html", null, true);
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "userId", [], "any", false, false, false, 42), "html", null, true);
             echo "
                  <br />
                     <span class=\"italic text-sm text-gray-800\"> Utworzone: ";
-            // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "dateCreate", [], "any", false, false, false, 43), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "dateCreate", [], "any", false, false, false, 44), "html", null, true);
             echo "
                  
                 </span>
 
                 <p class=\"text-base text-gray-700 pt-4 pb-10 leading-8 font-light text-overflow:ellipsis white-space:nowrap overflow:hidden\">
                 ";
-            // line 49
+            // line 50
             echo "                    ";
-            echo twig_escape_filter($this->env, (twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "description", [], "any", false, false, false, 49), 0, 175) . "..."), "html", null, true);
+            echo twig_escape_filter($this->env, (twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "description", [], "any", false, false, false, 50), 0, 175) . "..."), "html", null, true);
             echo "
                 </p>
 
                 <a href=\"/movies/";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "id", [], "any", false, false, false, 52), "html", null, true);
+            // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "id", [], "any", false, false, false, 53), "html", null, true);
             echo "\" class=\"uppercase border border-gray-500 text-gray-600 text-md py-4 px-12 rounded transition transition-all hover:bg-gray-800 hover:text-white\">
                     Czytaj dalej
                 </a>
             </div>
-           
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['movie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 58
-        echo "          
+        echo "    
         ";
-        // line 63
-        echo "    </div>
+        // line 60
+        echo "        <div class=\"navigation\">
+            ";
+        // line 61
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["movies"]) || array_key_exists("movies", $context) ? $context["movies"] : (function () { throw new RuntimeError('Variable "movies" does not exist.', 61, $this->source); })()));
+        echo "
+        </div>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -168,7 +174,7 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
 
     public function getDebugInfo()
     {
-        return array (  152 => 63,  149 => 58,  137 => 52,  130 => 49,  122 => 43,  117 => 41,  110 => 37,  99 => 29,  94 => 26,  90 => 25,  85 => 22,  75 => 14,  73 => 13,  64 => 7,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  155 => 61,  152 => 60,  149 => 58,  138 => 53,  131 => 50,  123 => 44,  118 => 42,  111 => 38,  100 => 30,  95 => 27,  91 => 26,  85 => 22,  75 => 14,  73 => 13,  64 => 7,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -185,7 +191,7 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
         </div>
         </div>
 
-        {% if app.user %}
+    {% if app.user %}
         <div class=\"mx-auto w-4/5 my-8\">
             <a 
                 href=\"/movies/create\" 
@@ -194,11 +200,12 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
             </a>
         </div>
     {% endif %}
-    
+   
     <div class=\"md:grid lg:grid-cols-3 gap-20 w-4/5 mx-auto py-15 \">
         <!-- Review Item -->
+        
         {% for movie in movies %}
-       
+        
             <div class=\"text-center pt-8 pb-4\">
                 <img
                     src=\"{{ movie.imagePath }}\"
@@ -228,13 +235,12 @@ class __TwigTemplate_ed1cf8562492a4e596ae5c48378d2c1e extends Template
                     Czytaj dalej
                 </a>
             </div>
-           
         {% endfor %}
-          
-        {#}Przyciski do nawigacji Paginacją:
-             <div class=\"navigation\">
-                {{ knp_pagination_render(movies) }}
-            </div> {#}
+    
+        {#}Przyciski do nawigacji Paginacją:{#}
+        <div class=\"navigation\">
+            {{ knp_pagination_render(movies) }}
+        </div>
     </div>
 {% endblock %}", "movies/index.html.twig", "C:\\xampp\\htdocs\\movies\\templates\\movies\\index.html.twig");
     }

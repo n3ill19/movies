@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Movie;
 use App\Form\MovieFormType;
 use App\Repository\MovieRepository;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Persistence\ManagerRegistry as PersistenceManagerRegistry;
@@ -31,7 +32,7 @@ class MoviesController extends AbstractController
     } 
     
     #[Route('/movies', name: 'movies')]
-    public function index(Request $request, PaginatorInterface $paginator, ManagerRegistry $doctrine): Response
+    public function index(Request $request, PaginatorInterface $paginator, EntityManagerInterface $em): Response
     {
         //find(All) - SELECT * FROM movies;
         //find() - SELECT * FROM movies WHERE id = 1; 
@@ -41,45 +42,20 @@ class MoviesController extends AbstractController
         $movies = $this->movieRepository->findAll();
 
     
-    /* Oficjalne ze strony:
-       $dql   = "SELECT * FROM movies";
+    /* Oficjalne ze strony:*/
+       $dql   = "SELECT id FROM App\Entity\Movie id";
        $query = $em->createQuery($dql);
    
-       $pagination = $paginator->paginate(
+       $movies = $paginator->paginate(
            $query, //query NOT result 
            $request->query->getInt('page ', 1), //page number
-           3 
+           6
        );
-       //KOLEJNY SPOSÓB:
-       $em = $this->$doctrine->getManager();
-        
-        $movieRepository = $em->getRepository(Movie::class);
-                
-        // Find all the data on the Appointments table, filter your query as you need
-        $allmovieQuery = $movieRepository->createQueryBuilder('p')
-            ->where('p.status != :status')
-            ->setParameter('status', 'canceled')
-            ->getQuery();
-        
-        // Paginate the results of the query
-        $movies = $paginator->paginate(
-            // Doctrine Query, not results
-            $allmovieQuery,
-            // Define the page parameter
-            $request->query->getInt('page', 1),
-            // Items per page
-            3
-        );*/
-        
        
         return $this->render('movies/index.html.twig', [
             'movies' => $movies
         ]); 
-
-        /*Kolejna metoda cz.1
-        return $this->render('movies/index.html.twig', [
-            'movies' => $paginatorService->paginate($entityManager->getRepository(Movie::class)->findAll(), $request)
-        ]);*/
+    
     }
 
     #[Route('/movies/create', name: 'create_movie')]
