@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Witaj na stronie Kinomaniacy!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+       
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
     </head>
@@ -122,27 +123,8 @@
                     </p>
                 </footer>
             {% endblock %}
-            <!--DODANA LINIA DLA GOOGLE reCAPTCHA -->
-             <script type="text/javascript">
-        /**
-         * The callback function executed
-         * once all the Google dependencies have loaded
-         */
-         {#
-         ReCaptcha
-         
-            *{% macro recaptcha(siteKey)%}
-            *<script src='https://www.google.com/recaptcha/api.js'></script>
-            *<div class="g-recaptcha" data-sitekey="{{siteKey}}"></div>
-            *{% endmacro %} 
-    
-         
-            function onGoogleReCaptchaApiLoad() {
-                var widgets = document.querySelectorAll('[data-toggle="recaptcha"]');
-                for (var i = 0; i < widgets.length; i++) {
-                    renderReCaptcha(widgets[i]); 
-                } 
-            } #}
+          
+       
             </script>
             <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onGoogleReCaptchaApiLoad&render=explicit&hl={{app.request.locale}}" async defer>
             </script>

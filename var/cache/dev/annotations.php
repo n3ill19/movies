@@ -151,8 +151,6 @@ return [[
 '[C]App%5CEntity%5CExample%24captchaCode' => 1,
 'App%5CEntity%5CMovie' => 14,
 '[C]App%5CEntity%5CMovie' => 1,
-'App%5CEntity%5CMovie%23__construct' => 0,
-'[C]App%5CEntity%5CMovie%23__construct' => 1,
 'App%5CEntity%5CMovie%23getId' => 0,
 '[C]App%5CEntity%5CMovie%23getId' => 1,
 'App%5CEntity%5CMovie%23getTitle' => 0,
@@ -175,12 +173,6 @@ return [[
 '[C]App%5CEntity%5CMovie%23getDateCreate' => 1,
 'App%5CEntity%5CMovie%23setDateCreate' => 0,
 '[C]App%5CEntity%5CMovie%23setDateCreate' => 1,
-'App%5CEntity%5CMovie%23getActors' => 0,
-'[C]App%5CEntity%5CMovie%23getActors' => 1,
-'App%5CEntity%5CMovie%23addActor' => 0,
-'[C]App%5CEntity%5CMovie%23addActor' => 1,
-'App%5CEntity%5CMovie%23removeActor' => 0,
-'[C]App%5CEntity%5CMovie%23removeActor' => 1,
 'App%5CEntity%5CMovie%23getUserId' => 0,
 '[C]App%5CEntity%5CMovie%23getUserId' => 1,
 'App%5CEntity%5CMovie%23setUserId' => 0,
@@ -195,11 +187,9 @@ return [[
 '[C]App%5CEntity%5CMovie%24description' => 1,
 'App%5CEntity%5CMovie%24imagePath' => 8,
 '[C]App%5CEntity%5CMovie%24imagePath' => 1,
-'App%5CEntity%5CMovie%24actors' => 18,
-'[C]App%5CEntity%5CMovie%24actors' => 1,
-'App%5CEntity%5CMovie%24userId' => 19,
+'App%5CEntity%5CMovie%24userId' => 18,
 '[C]App%5CEntity%5CMovie%24userId' => 1,
-'App%5CEntity%5CMovie%24dateCreate' => 20,
+'App%5CEntity%5CMovie%24dateCreate' => 19,
 '[C]App%5CEntity%5CMovie%24dateCreate' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
@@ -679,7 +669,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1655393479,
+1 => 1655793292,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1224,28 +1214,6 @@ return [[
 18 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
-            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ManyToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToMany')),
-        ],
-        null,
-        [
-            'stdClass' => [
-                'targetEntity' => [
-                    'App\\Entity\\Actor',
-                ],
-                'inversedBy' => [
-                    'movies',
-                ],
-            ],
-        ],
-        [
-            $o[0],
-        ],
-        []
-    );
-},
-19 => static function () {
-    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
-        $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
         ],
         null,
@@ -1268,7 +1236,7 @@ return [[
         []
     );
 },
-20 => static function () {
+19 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),

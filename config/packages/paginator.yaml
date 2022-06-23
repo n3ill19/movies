@@ -1,6 +1,6 @@
   # config/packages/paginator.yaml
 knp_paginator:
-   page_range: 25 # liczba linków w numeracji stron
+   page_range: 5 # liczba linków w numeracji stron
     default_options:                                  
         page_name: page # nazwa zmiennej w adresie Url, np: ?page=1              
         sort_field_name: sort           
@@ -9,7 +9,7 @@ knp_paginator:
         filter_field_name: filterField
         filter_value_name: filterValue 
     template:                                         
-        pagination: '@KnpPaginator/Pagination/sliding.html.twig'                                   
-        sortable: '@KnpPaginator/Pagination/sortable_link.html.twig'                                
-        filtration: '@KnpPaginator/Pagination/filtration.html.twig'
-        knp_paginator.template.pagination: my_pagination.html.twig
+        pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig'                                   
+        sortable: '@KKnpPaginator/Pagination/bootstrap_v5_bi_sortable_link.html.twig'                                
+        filtration: '@KnpPaginator/Pagination/bootstrap_v5_filtration.html.twig'
+      

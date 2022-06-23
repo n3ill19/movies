@@ -17,7 +17,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Doctrine\ORM\QueryBuilder;
 use Knp\Component\Pager\PaginatorInterface;
-use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use Pagerfanta\Doctrine\ORM\QueryAdapter;
+use Pagerfanta\Pagerfanta;
 
 
 class MoviesController extends AbstractController
@@ -30,7 +31,20 @@ class MoviesController extends AbstractController
         $this->em = $em;
         $this->movieRepository = $movieRepository;
     } 
-    
+
+    //Paginacja w indexie za pomocą Pagerfanta
+    #[Route('/movies', name: 'movies')]
+    public function index(Request $request, EntityManagerInterface $em): Response
+    {
+        $pagerfanta = new Pagerfanta(new QueryAdapter($em->createQuery('SELECT movie FROM App\Entity\Movie movie')));
+        $pagerfanta->setMaxPerPage(6);
+        $pagerfanta->setCurrentPage($request->query->getInt('page', 1));
+        
+
+        return $this->render('movies/index.html.twig', ['movies' => $pagerfanta]);   
+    }
+
+    /* POPRZEDNIA PAGINACJA W knpPaginatior - stare biblioteki, brak supportu...
     #[Route('/movies', name: 'movies')]
     public function index(Request $request, PaginatorInterface $paginator, EntityManagerInterface $em): Response
     {
@@ -41,22 +55,21 @@ class MoviesController extends AbstractController
         //Implementacja wpisana bezpośrednio w return:
         $movies = $this->movieRepository->findAll();
 
+      
     
-    /* Oficjalne ze strony:*/
+    //Oficjalne ze strony:
        $dql   = "SELECT id FROM App\Entity\Movie id";
        $query = $em->createQuery($dql);
    
+
        $movies = $paginator->paginate(
            $query, //query NOT result 
            $request->query->getInt('page ', 1), //page number
            6
        );
        
-        return $this->render('movies/index.html.twig', [
-            'movies' => $movies
-        ]); 
-    
-    }
+        return $this->render('movies/index.html.twig', ['movies' => $movies]); 
+    } */
 
     #[Route('/movies/create', name: 'create_movie')]
     public function create(Request $request): Response

@@ -22,7 +22,7 @@ class MovieRepository extends ServiceEntityRepository
     // /**
     //  * @return Movie[] Returns an array of Movie objects
     //  */
-    /*
+    
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('m')
@@ -34,9 +34,9 @@ class MovieRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+    
 
-    /*
+    
     public function findOneBySomeField($value): ?Movie
     {
         return $this->createQueryBuilder('m')
@@ -46,5 +46,5 @@ class MovieRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+    
 }

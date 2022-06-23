@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* ./base.html.twig */
+/* base.html.twig */
 class __TwigTemplate_0d49452628a29db7b0439a7c0a65a5ec extends Template
 {
     private $source;
@@ -38,7 +38,7 @@ class __TwigTemplate_0d49452628a29db7b0439a7c0a65a5ec extends Template
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./base.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -68,18 +68,12 @@ class __TwigTemplate_0d49452628a29db7b0439a7c0a65a5ec extends Template
         // line 118
         $this->displayBlock('footer', $context, $blocks);
         // line 125
-        echo "            <!--DODANA LINIA DLA GOOGLE reCAPTCHA -->
-             <script type=\"text/javascript\">
-        /**
-         * The callback function executed
-         * once all the Google dependencies have loaded
-         */
-         ";
-        // line 146
-        echo "            </script>
+        echo "          
+       
+            </script>
             <script type=\"text/javascript\" src=\"https://www.google.com/recaptcha/api.js?onload=onGoogleReCaptchaApiLoad&render=explicit&hl=";
-        // line 147
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 147, $this->source); })()), "request", [], "any", false, false, false, 147), "locale", [], "any", false, false, false, 147), "html", null, true);
+        // line 128
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 128, $this->source); })()), "request", [], "any", false, false, false, 128), "locale", [], "any", false, false, false, 128), "html", null, true);
         echo "\" async defer>
             </script>
     </body>
@@ -257,7 +251,7 @@ class __TwigTemplate_0d49452628a29db7b0439a7c0a65a5ec extends Template
 
     public function getTemplateName()
     {
-        return "./base.html.twig";
+        return "base.html.twig";
     }
 
     public function isTraitable()
@@ -267,7 +261,7 @@ class __TwigTemplate_0d49452628a29db7b0439a7c0a65a5ec extends Template
 
     public function getDebugInfo()
     {
-        return array (  247 => 119,  240 => 118,  228 => 116,  212 => 106,  207 => 104,  113 => 12,  106 => 11,  93 => 5,  82 => 147,  79 => 146,  71 => 125,  69 => 118,  66 => 117,  64 => 116,  61 => 115,  59 => 11,  50 => 5,  44 => 1,);
+        return array (  241 => 119,  234 => 118,  222 => 116,  206 => 106,  201 => 104,  107 => 12,  100 => 11,  87 => 5,  76 => 128,  71 => 125,  69 => 118,  66 => 117,  64 => 116,  61 => 115,  59 => 11,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -396,31 +390,12 @@ class __TwigTemplate_0d49452628a29db7b0439a7c0a65a5ec extends Template
                     </p>
                 </footer>
             {% endblock %}
-            <!--DODANA LINIA DLA GOOGLE reCAPTCHA -->
-             <script type=\"text/javascript\">
-        /**
-         * The callback function executed
-         * once all the Google dependencies have loaded
-         */
-         {#
-         ReCaptcha
-         
-            *{% macro recaptcha(siteKey)%}
-            *<script src='https://www.google.com/recaptcha/api.js'></script>
-            *<div class=\"g-recaptcha\" data-sitekey=\"{{siteKey}}\"></div>
-            *{% endmacro %} 
-    
-         
-            function onGoogleReCaptchaApiLoad() {
-                var widgets = document.querySelectorAll('[data-toggle=\"recaptcha\"]');
-                for (var i = 0; i < widgets.length; i++) {
-                    renderReCaptcha(widgets[i]); 
-                } 
-            } #}
+          
+       
             </script>
             <script type=\"text/javascript\" src=\"https://www.google.com/recaptcha/api.js?onload=onGoogleReCaptchaApiLoad&render=explicit&hl={{app.request.locale}}\" async defer>
             </script>
     </body>
-</html>", "./base.html.twig", "C:\\xampp\\htdocs\\movies\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\xampp\\htdocs\\movies\\templates\\base.html.twig");
     }
 }
