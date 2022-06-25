@@ -125,11 +125,9 @@ class __TwigTemplate_08e27a991e703c23792f2193464217c5 extends Template
                 </h2>
 
                 
-                    <span class=\"italic text-sm text-gray-800\"> Autor: ";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "userId", [], "any", false, false, false, 54), "html", null, true);
-            echo "
-                 <br />
+                    <span class=\"italic text-sm text-gray-800\"> Autor: Admin";
+            // line 55
+            echo "                 <br />
                     <span class=\"italic text-sm text-gray-800\"> Utworzone: ";
             // line 56
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["movie"], "dateCreate", [], "any", false, false, false, 56), "html", null, true);
@@ -170,7 +168,7 @@ class __TwigTemplate_08e27a991e703c23792f2193464217c5 extends Template
         if ((twig_length_filter($this->env, (isset($context["movies"]) || array_key_exists("movies", $context) ? $context["movies"] : (function () { throw new RuntimeError('Variable "movies" does not exist.', 81, $this->source); })())) > 1)) {
             // line 82
             echo "            ";
-            echo $this->env->getRuntime('Pagerfanta\Twig\Extension\PagerfantaRuntime')->renderPagerfanta((isset($context["movies"]) || array_key_exists("movies", $context) ? $context["movies"] : (function () { throw new RuntimeError('Variable "movies" does not exist.', 82, $this->source); })()), "default", ["omitFirstPage" => true]);
+            echo $this->env->getRuntime('Pagerfanta\Twig\Extension\PagerfantaRuntime')->renderPagerfanta((isset($context["movies"]) || array_key_exists("movies", $context) ? $context["movies"] : (function () { throw new RuntimeError('Variable "movies" does not exist.', 82, $this->source); })()), "default", ["omitFirstPage" => false]);
             echo "
         ";
         }
@@ -194,7 +192,7 @@ class __TwigTemplate_08e27a991e703c23792f2193464217c5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  178 => 84,  172 => 82,  170 => 81,  166 => 79,  162 => 71,  150 => 65,  143 => 62,  135 => 56,  130 => 54,  123 => 50,  112 => 42,  107 => 39,  103 => 38,  97 => 34,  87 => 26,  85 => 25,  76 => 19,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  176 => 84,  170 => 82,  168 => 81,  164 => 79,  160 => 71,  148 => 65,  141 => 62,  133 => 56,  130 => 55,  123 => 50,  112 => 42,  107 => 39,  103 => 38,  97 => 34,  87 => 26,  85 => 25,  76 => 19,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -252,7 +250,7 @@ class __TwigTemplate_08e27a991e703c23792f2193464217c5 extends Template
                 </h2>
 
                 
-                    <span class=\"italic text-sm text-gray-800\"> Autor: {{ movie.userId }}
+                    <span class=\"italic text-sm text-gray-800\"> Autor: Admin{#}Trzeba utworzyć tabelę i powiązać nadawane ID z nazwa konta{{ movie.userId }}{#}
                  <br />
                     <span class=\"italic text-sm text-gray-800\"> Utworzone: {{ movie.dateCreate }}
                  
@@ -280,7 +278,7 @@ class __TwigTemplate_08e27a991e703c23792f2193464217c5 extends Template
 
         <div>
         {% if movies|length > 1 %}
-            {{ pagerfanta(movies, 'default', { omitFirstPage: true }) }}
+            {{ pagerfanta(movies, 'default', { omitFirstPage: false }) }}
         {% endif %}
         </div>
 {% endblock %}", "movies/index.html.twig", "C:\\xampp\\htdocs\\movies\\templates\\movies\\index.html.twig");

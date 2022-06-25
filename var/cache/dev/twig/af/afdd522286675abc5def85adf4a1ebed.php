@@ -80,7 +80,7 @@ class __TwigTemplate_3fbfc2fd93f5741e421af2ed83cb6e68 extends Template
         </div>
 
              <a 
-                href=\"/movies\"
+                href=\"/movies?page=1\"
                 class=\"uppercase border border-gray-500 text-md py-2 px-3 rounded transition transition-all bg-gray-800 text-white hover:bg-white hover:text-gray-800\">
                 Wróć do wszystkich recenzji
             </a>
@@ -178,7 +178,7 @@ class __TwigTemplate_3fbfc2fd93f5741e421af2ed83cb6e68 extends Template
         </div>
 
              <a 
-                href=\"/movies\"
+                href=\"/movies?page=1\"
                 class=\"uppercase border border-gray-500 text-md py-2 px-3 rounded transition transition-all bg-gray-800 text-white hover:bg-white hover:text-gray-800\">
                 Wróć do wszystkich recenzji
             </a>

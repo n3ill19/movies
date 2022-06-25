@@ -70,14 +70,9 @@ class __TwigTemplate_dd673ab946b805de0db00fff1e97ce10 extends Template
         $this->displayBlock('footer', $context, $blocks);
         // line 126
         echo "          
-       
-            </script>
-            <script type=\"text/javascript\" src=\"https://www.google.com/recaptcha/api.js?onload=onGoogleReCaptchaApiLoad&render=explicit&hl=";
-        // line 129
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 129, $this->source); })()), "request", [], "any", false, false, false, 129), "locale", [], "any", false, false, false, 129), "html", null, true);
-        echo "\" async defer>
-            </script>
-    </body>
+            ";
+        // line 131
+        echo "    </body>
 </html>";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -115,7 +110,7 @@ class __TwigTemplate_dd673ab946b805de0db00fff1e97ce10 extends Template
                         <div class=\"flex items-center flex-shrink-0 text-white mr-6\">
                             <a
                                     class=\"text-white no-underline hover:text-white hover:no-underline\"
-                                    href=\"/movies\">
+                                    href=\"/movies?page=1\">
             <span class=\"text-2xl pl-2 font-extrabold\">
                 F I L M O 
             <span class=\"text-blue-300\"> 
@@ -170,7 +165,7 @@ class __TwigTemplate_dd673ab946b805de0db00fff1e97ce10 extends Template
                                 <li class=\"mr-3\">
                                     <a
                                             class=\"inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4\"
-                                            href=\"/movies\"
+                                            href=\"/movies?page=1\"
                                             @click=\"isOpen = false\">
                                         Recenzje
                                     </a>
@@ -255,14 +250,9 @@ class __TwigTemplate_dd673ab946b805de0db00fff1e97ce10 extends Template
         return "./base.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  242 => 120,  235 => 119,  223 => 117,  207 => 107,  202 => 105,  108 => 13,  101 => 12,  88 => 5,  77 => 129,  72 => 126,  70 => 119,  67 => 118,  65 => 117,  62 => 116,  60 => 12,  50 => 5,  44 => 1,);
+        return array (  237 => 120,  230 => 119,  218 => 117,  202 => 107,  197 => 105,  103 => 13,  96 => 12,  83 => 5,  75 => 131,  72 => 126,  70 => 119,  67 => 118,  65 => 117,  62 => 116,  60 => 12,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -289,7 +279,7 @@ class __TwigTemplate_dd673ab946b805de0db00fff1e97ce10 extends Template
                         <div class=\"flex items-center flex-shrink-0 text-white mr-6\">
                             <a
                                     class=\"text-white no-underline hover:text-white hover:no-underline\"
-                                    href=\"/movies\">
+                                    href=\"/movies?page=1\">
             <span class=\"text-2xl pl-2 font-extrabold\">
                 F I L M O 
             <span class=\"text-blue-300\"> 
@@ -344,7 +334,7 @@ class __TwigTemplate_dd673ab946b805de0db00fff1e97ce10 extends Template
                                 <li class=\"mr-3\">
                                     <a
                                             class=\"inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4\"
-                                            href=\"/movies\"
+                                            href=\"/movies?page=1\"
                                             @click=\"isOpen = false\">
                                         Recenzje
                                     </a>
@@ -393,10 +383,10 @@ class __TwigTemplate_dd673ab946b805de0db00fff1e97ce10 extends Template
                 </footer>
             {% endblock %}
           
-       
+            {#}
             </script>
             <script type=\"text/javascript\" src=\"https://www.google.com/recaptcha/api.js?onload=onGoogleReCaptchaApiLoad&render=explicit&hl={{app.request.locale}}\" async defer>
-            </script>
+            </script> {#}
     </body>
 </html>", "./base.html.twig", "C:\\xampp\\htdocs\\movies\\templates\\base.html.twig");
     }

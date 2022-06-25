@@ -20,7 +20,7 @@
                         <div class="flex items-center flex-shrink-0 text-white mr-6">
                             <a
                                     class="text-white no-underline hover:text-white hover:no-underline"
-                                    href="/movies">
+                                    href="/movies?page=1">
             <span class="text-2xl pl-2 font-extrabold">
                 F I L M O 
             <span class="text-blue-300"> 
@@ -75,7 +75,7 @@
                                 <li class="mr-3">
                                     <a
                                             class="inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                                            href="/movies"
+                                            href="/movies?page=1"
                                             @click="isOpen = false">
                                         Recenzje
                                     </a>
@@ -124,9 +124,9 @@
                 </footer>
             {% endblock %}
           
-       
+            {#}
             </script>
             <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onGoogleReCaptchaApiLoad&render=explicit&hl={{app.request.locale}}" async defer>
-            </script>
+            </script> {#}
     </body>
 </html>

@@ -51,7 +51,7 @@
                 </h2>
 
                 
-                    <span class="italic text-sm text-gray-800"> Autor: {{ movie.userId }}
+                    <span class="italic text-sm text-gray-800"> Autor: Admin{#}Trzeba utworzyć tabelę i powiązać nadawane ID z nazwa konta{{ movie.userId }}{#}
                  <br />
                     <span class="italic text-sm text-gray-800"> Utworzone: {{ movie.dateCreate }}
                  
@@ -79,7 +79,7 @@
 
         <div>
         {% if movies|length > 1 %}
-            {{ pagerfanta(movies, 'default', { omitFirstPage: true }) }}
+            {{ pagerfanta(movies, 'default', { omitFirstPage: false }) }}
         {% endif %}
         </div>
 {% endblock %}
